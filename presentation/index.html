@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="fr">
+    <meta charset="UTF-8">
+    <!--Page Title-->
+    <title>Hack-Oeil - Les CTFs de Cyrhades</title>
+    <!--Meta Keywords and Description-->
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <link rel="shortcut icon" href="./assets/images/favicon.ico" title="Favicon" />
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="./assets/css/github.min.css">
+    <script src="./assets/js/highlight.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Vérifie si la fenêtre est dans une iframe
+            if (window.self !== window.top) {
+                document.querySelectorAll('a').forEach((link) => {
+                    link.addEventListener('click', (event) => {
+                        const a = event.target.closest('a[href^="http"]');
+                        if (a) {
+                            event.preventDefault();
+                            window.parent.postMessage({
+                                type: "open-external",
+                                url: a.href
+                            }, "*");
+                        }
+                    });
+                });
+            }
+            // Active la coloration syntaxique :
+            if (window.hljs) {
+                hljs.highlightAll();
+            } else {
+                console.error("Highlight.js non chargé !");
+            }
+        });
+    </script>
+</head>
+
+<body>
+
+    <div id="wrapper">
+        <!--Main Content Area-->
+        <main id="content">
+            <!--Ctf-->
+            <section class="ctf scrollto">
+                <article class="row clearfix">
+                    <div class="col-1">
+                        <div class="section-heading">
+                            <h3>Challenge #518</h3>
+                            <h2 class="section-title">Binary Lullaby</h2>
+                            <p>
+                                Votre amie a chiffré un secret avec un circuit intégré super sécurisé. Malheureusement
+                                la fonctionnalité de déchiffrement de ce circuit est en panne.
+                                <br /><br />
+                                Vous cassez votre tirelire et payez votre université pour ouvrir puis numériser ce
+                                circuit intégré avec un microscope électronique à balayage. Ils reviennent vers vous
+                                quelques mois plus tard avec une netlist du <strong>circuit de chiffrement</strong>
+                                (fichier
+                                <code>netlist.v</code>) obtenue par reconnaissance des portes logiques élémentaires sur
+                                le
+                                substrat de ce circuit.
+                                <br /><br />
+                                Le secret chiffré est (une entrée par ligne) :<br />
+                                <code>0100010100000111
+0110010001011000
+0100010001110111
+0000010001011101
+0101011001010001
+0100010100010000
+0101011000001100
+0011001101010111
+0001101100111001
+0001000001010010
+0001101001111001
+0111101100110100
+0011101001111110
+0101010001000111
+0010110101110101
+0101000000011110
+0110010100000110
+0101000100010101
+0001110101100001
+</code>
+                                <br /><br />
+                                Saurez-vous exploiter cette netlist pour retrouver le secret ?
+                            </p>
+                            <h4>Fichier à étudier</h4>
+                            <p>
+                                - netlist.v
+                            </p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="row clearfix">
+                    <div class="col-1">
+                        <div class="section-heading">
+                            <h3>FCSC 2025</h3>
+                            <h2 class="section-title">Hackropole</h2>
+                            <p class="section-subtitle">
+                                Lien officiel :
+                                <a target="_blank"
+                                    href="https://hackropole.fr/fr/challenges/hardware/fcsc2025-hardware-binary-lullaby/">FCSC
+                                    2025 -
+                                    Binary Lullaby
+                                </a>
+                                <br />
+                                Auteur: erdnaxe
+                        </div>
+                    </div>
+                </article>
+
+                <article class="row clearfix">
+                    <div class="col-1">
+                        <div class="section-heading">
+                            <h3>Apprentissage</h3>
+                            <h2 class="section-title">Documentations et Vidéos</h2>
+                            <p class="section-subtitle">
+                                Aucune documentation pour le moment
+                            </p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="row clearfix">
+                    <div class="col-1">
+                        <div class="section-heading">
+                            <h3>Aide</h3>
+                            <h2 class="section-title">Conseils et indices</h2>
+                            <p class="section-subtitle">
+                                <a target="_blank"
+                                    href="https://discord.com/channels/1175764392307077120/1175764601716092948">Fil sur
+                                    le Discord</a>
+                            </p>
+                        </div>
+                    </div>
+                </article>
+            </section>
+            <!--End of Ctf-->
+        </main>
+        <!--End Main Content Area-->
+
+        <a id="scrollUp" href="#wrapper" style="position: fixed; z-index: 1000;"
+            aria-label="Remonter en haut de la page" title="Remonter en tête de site"></a>
+    </div>
+</body>
+
+</html>
